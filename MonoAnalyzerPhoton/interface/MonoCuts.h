@@ -23,13 +23,26 @@ public:
         x.CreatPlot(RZPar1,new TH1F("RZPar1","",100,-15,15));
         x.CreatPlot(RZcurv,new TH1F("RZcurv","",100,-0.01,0.01));
 	//x.CreatPlot(E55,new TH1F("E55","",100,-1,1200));
-        x.CreatPlot(E55,new TH1F("E55","",100,0.0,1500));
+        x.CreatPlot(E55,new TH1F("E55","",100,0.0,3000));
+        //x.CreatPlot(E99,new TH1F("E99","",100,0.0,1500));
         //x.CreatPlot(F51,new TH1F("F51","",100,0.2,1.1));
         x.CreatPlot(F51,new TH1F("F51","",100,0.0,1.1));
         x.CreatPlot(eta,new TH1F("eta","",100,-5.0,5.0));
         x.CreatPlot(phi,new TH1F("phi","",100,-5.0,5.0));
         x.CreatPlot(HcalIso,new TH1F("HcalIso","",100,0,30));
         x.CreatPlot(ABCD,new TH2D("ABCD","",100,0,1.1,100,0,30));
+
+        x.CreatPlot(mono_eta,new TH1F("mono_eta","",100,-5.0,5.0));
+        x.CreatPlot(amon_eta,new TH1F("amon_eta","",100,-5.0,5.0));
+        x.CreatPlot(mono_phi,new TH1F("mono_phi","",100,-5.0,5.0));
+        x.CreatPlot(amon_phi,new TH1F("amon_phi","",100,-5.0,5.0));
+        x.CreatPlot(mono_KE,new TH1F("mono_KE","",200,0.0,3000.0));
+        x.CreatPlot(mono_Et,new TH1F("mono_Et","",200,0.0,8000.0));
+        //x.CreatPlot(mono_ECAL,new TH1F("mono_ECAL","",200,0.0,3000.0));
+        x.CreatPlot(amon_KE,new TH1F("amon_KE","",200,0.0,3000.0));
+        x.CreatPlot(amon_Et,new TH1F("amon_Et","",200,0.0,8000.0));
+        x.CreatPlot(PFMET_pt,new TH1F("PFMET_pt","",100,0.0,2000.0));
+        x.CreatPlot(PFMET_phi,new TH1F("PFMET_phi","",100,-5.0,5.0));
 
         NoCutProfile.resize(1U);
         PlotSet &p = NoCutProfile[0];
@@ -64,13 +77,26 @@ public:
            z.CreatPlot(RZPar1,new TH1F((cutn1name+"RZPar1").c_str(),"",100,-15,15));
 	   z.CreatPlot(RZcurv,new TH1F((cutn1name+"RZcurv").c_str(),"",100,-0.01,0.01));
            //z.CreatPlot(E55,new TH1F((cutn1name+"E55").c_str(),"",100,-1,1200));
-           z.CreatPlot(E55,new TH1F((cutn1name+"E55").c_str(),"",100,0.0,1500));
+           z.CreatPlot(E55,new TH1F((cutn1name+"E55").c_str(),"",100,0.0,3000));
+           //z.CreatPlot(E99,new TH1F((cutn1name+"E99").c_str(),"",100,0.0,1500));
            //z.CreatPlot(F51,new TH1F((cutn1name+"F51").c_str(),"",100,0.2,1.1));
            z.CreatPlot(eta,new TH1F((cutn1name+"eta").c_str(),"",100,-5.0,5.0));
            z.CreatPlot(phi,new TH1F((cutn1name+"phi").c_str(),"",100,-5.0,5.0));
            z.CreatPlot(F51,new TH1F((cutn1name+"F51").c_str(),"",100,0.0,1.1));
            z.CreatPlot(HcalIso,new TH1F((cutn1name+"HcalIso").c_str(),"",100,0,30));
            z.CreatPlot(ABCD,new TH2D((cutn1name+"ABCD").c_str(),"",100,0,1.1,100,0,30));
+
+           z.CreatPlot(mono_eta,new TH1F((cutn1name+"mono_eta").c_str(),"",100,-5.0,5.0));
+           z.CreatPlot(amon_eta,new TH1F((cutn1name+"amon_eta").c_str(),"",100,-5.0,5.0));
+           z.CreatPlot(mono_phi,new TH1F((cutn1name+"mono_phi").c_str(),"",100,-5.0,5.0));
+           z.CreatPlot(amon_phi,new TH1F((cutn1name+"amon_phi").c_str(),"",100,-5.0,5.0));
+           z.CreatPlot(mono_KE,new TH1F((cutn1name+"mono_KE").c_str(),"",200,0.0,3000.0));
+           z.CreatPlot(mono_Et,new TH1F((cutn1name+"mono_Et").c_str(),"",200,0.0,8000.0)); 
+           //z.CreatPlot(mono_ECAL,new TH1F((cutn1name+"mono_ECAL").c_str(),"",200,0.0,3000.0));
+           z.CreatPlot(amon_KE,new TH1F((cutn1name+"amon_KE").c_str(),"",200,0.0,3000.0));
+           z.CreatPlot(amon_Et,new TH1F((cutn1name+"amon_Et").c_str(),"",200,0.0,8000.0));
+           z.CreatPlot(PFMET_pt,new TH1F((cutn1name+"PFMET_pt").c_str(),"",100,0.0,2000.0));
+           z.CreatPlot(PFMET_phi,new TH1F((cutn1name+"PFMET_phi").c_str(),"",100,-5.0,5.0));
 	}
 
         // The CutFlow Plots: 
@@ -90,13 +116,26 @@ public:
            y.CreatPlot(RZPar1,new TH1F((cutflowName+"RZPar1").c_str(),"",100,-15,15));
            y.CreatPlot(RZcurv,new TH1F((cutflowName+"RZcurv").c_str(),"",100,-0.01,0.01));
            //y.CreatPlot(E55,new TH1F((cutflowName+"E55").c_str(),"",100,-1,1200));
-           y.CreatPlot(E55,new TH1F((cutflowName+"E55").c_str(),"",100,0.0,1500));
+           y.CreatPlot(E55,new TH1F((cutflowName+"E55").c_str(),"",100,0.0,3000));
+           //y.CreatPlot(E99,new TH1F((cutflowName+"E99").c_str(),"",100,0.0,1500));
            y.CreatPlot(eta,new TH1F((cutflowName+"eta").c_str(),"",100,-5.0,5.0));
            y.CreatPlot(phi,new TH1F((cutflowName+"phi").c_str(),"",100,-5.0,5.0));
            //y.CreatPlot(F51,new TH1F((cutflowName+"F51").c_str(),"",100,0.2,1.1));
            y.CreatPlot(F51,new TH1F((cutflowName+"F51").c_str(),"",100,0.0,1.1));
            y.CreatPlot(HcalIso,new TH1F((cutflowName+"HcalIso").c_str(),"",100,0,30));
            y.CreatPlot(ABCD,new TH2D((cutflowName+"ABCD").c_str(),"",100,0,1.1,100,0,30));
+
+           y.CreatPlot(mono_eta,new TH1F((cutflowName+"mono_eta").c_str(),"",100,-5.0,5.0));
+           y.CreatPlot(amon_eta,new TH1F((cutflowName+"amon_eta").c_str(),"",100,-5.0,5.0));
+           y.CreatPlot(mono_phi,new TH1F((cutflowName+"mono_phi").c_str(),"",100,-5.0,5.0));
+           y.CreatPlot(amon_phi,new TH1F((cutflowName+"amon_phi").c_str(),"",100,-5.0,5.0));
+           y.CreatPlot(mono_KE,new TH1F((cutflowName+"mono_KE").c_str(),"",200,0.0,3000.0));
+           //y.CreatPlot(mono_ECAL,new TH1F((cutflowName+"mono_ECAL").c_str(),"",200,0.0,3000.0));
+           y.CreatPlot(mono_Et,new TH1F((cutflowName+"mono_Et").c_str(),"",200,0.0,8000.0));
+           y.CreatPlot(amon_KE,new TH1F((cutflowName+"amon_KE").c_str(),"",200,0.0,3000.0));
+           y.CreatPlot(amon_Et,new TH1F((cutflowName+"amon_Et").c_str(),"",200,0.0,8000.0));
+           y.CreatPlot(PFMET_pt,new TH1F((cutflowName+"PFMET_pt").c_str(),"",100,0.0,2000.0));
+           y.CreatPlot(PFMET_phi,new TH1F((cutflowName+"PFMET_phi").c_str(),"",100,-5.0,5.0));   
 
        	   PlotSet &w = Profile[c];
        	   w.CreatProfile(EcalBarrel ,new TProfile((cutflowName+"EcalBarrel").c_str(),"",30,0,1.1,0,30));
@@ -181,14 +220,17 @@ public:
 	fout<<mass+" "+trName<<",CutFlow,"<<endl;
         fout<<"Generated ev,"<<TotalEvents<<endl;
         fout<<"        TRG, "<<count<<endl;
+        fout<<"        MET, "<<MET_count<<endl;
         fout<<"QualityCuts, "<<Qual_count<<endl;
         fout<<"       ECut, "<<E_count<<endl;
         fout<<"     F51Cut, "<<f51_count<<endl;
         fout<<" dEdXSigCut, "<<dEdX_count<<endl;
         fout<<"Signal efficiency, "<<(double)dEdX_count/(double)TotalEvents<<endl;
+        fout<<"Trigger efficiency, "<<(double)count/(double)TotalEvents<<endl;
         fout<<endl;
 	fout<<",N1Cuts,Relative eff"<<endl;
         fout<<"     No TRG, "<<NoTRG <<","<<(double)dEdX_count/(double)NoTRG<<endl;
+        //fout<<"     No MET, "<<NoTRG <<","<<(double)dEdX_count/(double)NoTRG<<endl;
         fout<<" No Quality, "<<NoQual<<","<<(double)dEdX_count/(double)NoQual<<endl;
         fout<<"    No ECut, "<< NoE  <<","<<(double)dEdX_count/(double)NoE<<endl;
         fout<<"  No F51Cut, "<<NoF51 <<","<<(double)dEdX_count/(double)NoF51<<endl;

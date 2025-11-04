@@ -48,11 +48,40 @@ There are two output files:
 
 2. MonoPhotonAnalysis_*.root : all cutflow plots and N-1 plots written in ROOT file.
 
+
+### Update for the two strategies and the four processes: 
+
+The code is designed to run with:
+Two Strategies: Photon and PFMET
+Four processes: SpinHalf_DrellYan, SpinZero_DrellYan, SpinHalf_PhotonFusion, SpinZero_PhotonFusion 
+
+The script "run" is designed to run through all four processes and mass points. To be executed with `./run`
+Production of a logfile, which should be changed to match the selected strategy. 
+The MonoAnalyzerPhoton function had a string process added to account for all the processes.
+
+`root -l -q "src/MonoAnalyzerPhoton.cc("2018","1000",\"SpinHalf_DY",1 ,0)" `
+
+For the change between the two strategies:
+
+1. Photon strategy:
+
+`const double MonoCuts::e55Cut_ = 200.0;`
+`const double MonoCuts::e55Cut2016_ = 175.0;`
+`const double MonoCuts::PFMET_pt_Cut_= 0.0;`
+
+2. PFMET strategy:
+
+`const double MonoCuts::e55Cut_ = 0.0;`
+`const double MonoCuts::e55Cut2016_ = 0.0;`
+`const double MonoCuts::PFMET_pt_Cut_= 400.0;`
+`const double MonoCuts::PFMET_pt_Cut2016_= 500.0; `
+
 ### other 
 
 Don't care about the "warning" message.
 
 Contact Lin if you have any questions: lshih@cern.ch
 
+Contact Thales: tmenezes@cern.ch
 
 

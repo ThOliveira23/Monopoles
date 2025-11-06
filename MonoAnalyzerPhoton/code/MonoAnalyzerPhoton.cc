@@ -929,27 +929,10 @@ void MonoAnalyzerPhoton(string year, string mass, string process, bool matching_
 		//cout << "/eos/cms/store/user/srimanob/monopole/13TeV/Legacy-NTUPLE-v2/merges/"+year+"-"+mass+".root" <<  endl;
 		
 		// Centrally Produced Samples (SpinZero and SpinHalf for DY and PF)
-	        //tree->Add(("/eos/user/t/tmenezes/Monopole_Ntuples/Central_Production/"+year+"/MM_"+process+"_M-"+mass+"_"+year+".root").c_str()); 
-		//cout << "/eos/user/t/tmenezes/Monopole_Ntuples/Central_Production/"+year+"/MM_"+process+"_M-"+mass+"_"+year+".root" << endl;
+	        tree->Add(("/eos/cms/store/group/offcomp_upgrade-sw/srimanob/monopole/signal/MET_corrected/"+year+"/MM_"+process+"_M-"+mass+"_"+year+".root").c_str()); 
+		cout << "/eos/cms/store/group/offcomp_upgrade-sw/srimanob/monopole/signal/MET_corrected/"+year+"/MM_"+process+"_M-"+mass+"_"+year+".root" << endl;
 
-                // Type-1 MET corrected Centrally Produced Samples (SpinZero and SpinHalf for DY and PF)
-                tree->Add(("/eos/user/t/tmenezes/Monopole_Ntuples/Central_Production/MET_corrected/"+year+"/MM_"+process+"_M-"+mass+"_"+year+".root").c_str());
 		
-		// extra Variables
-		//tree->Add(("/eos/user/t/tmenezes/Monopole_Ntuples/Central_Production/MET_corrected/2018_OOT_kWeird/MM_"+process+"_M-"+mass+"_"+year+".root").c_str());
-                //cout << "/eos/user/t/tmenezes/Monopole_Ntuples/Central_Production/MET_corrected/2018_OOT_kWeird/MM_"+process+"_M-"+mass+"_"+year+".root" << endl;
-
-                // Birks' Law studies
-                //tree->Add(("/eos/user/t/tmenezes/Monopole_Ntuples/PrivateProduction_SpinHalf_DrellYan/RECO_BirksOff/SpinHalf_DrellYan_BirksOn_"+mass+"_"+year+".root").c_str());
-                //cout << "/eos/user/t/tmenezes/Monopole_Ntuples/PrivateProduction_SpinHalf_DrellYan/RECO_BirksOff/SpinHalf_DrellYan_BirksOn_"+mass+"_"+year+".root" << endl;
-
-                // Z prime
-                //tree->Add(("/eos/user/t/tmenezes/Zprime_MC_MONO_2018/Zprime_M-2500_"+year+".root").c_str());
-     
-                // G4SimHits + KE
-                //tree->Add(("/eos/user/t/tmenezes/Monopole_Ntuples/Central_Production/MET_corrected/2018_KE_MC/MM_SpinZero_DrellYan_M-"+mass+"_"+year+".root").c_str());
-                //tree->Add(("/eos/user/t/tmenezes/Monopole_Ntuples/PrivateProduction_SpinHalf_DrellYan/SpinHalf_DrellYan_"+mass+"_"+year+".root").c_str());                        
-
 
 	}
 	else if(sys_option == 1){
@@ -975,24 +958,7 @@ void MonoAnalyzerPhoton(string year, string mass, string process, bool matching_
         // Central Production - PFMET strategy
         TFile *oFile = new TFile(("/eos/user/t/tmenezes/Monopole_Ntuples/Central_Production/METcorrected_output_MonoAnalyzerPhoton/PFMET_Strategy/"+year+"/"+process+"/MonoPhotonAnalysis_"+year+"_"+mass+"_"+sys+"_"+matching+".root").c_str(),"recreate");
 	//cout << "Created output file at:" << "/eos/user/t/tmenezes/Monopole_Ntuples/Central_Production/METcorrected_output_MonoAnalyzer/PFMET_Strategy/"+year+"/"+process+"/MonoPhotonAnalysis_"+year+"_"+mass+"_"+sys+"_"+matching+".root" << endl;
-
-	// Central Production - Photon strategy: modified e55
-	//TFile *oFile = new TFile(("/eos/user/t/tmenezes/Monopole_Ntuples/Central_Production/METcorrected_output_MonoAnalyzerPhoton/Photon_Strategy/modified_e55/"+year+"/"+process+"/kWeirdkOOT_MonoPhotonAnalysis_"+year+"_"+mass+"_"+sys+"_"+matching+".root").c_str(),"recreate");
-	//cout << "Created output file at:" << "/eos/user/t/tmenezes/Monopole_Ntuples/Central_Production/METcorrected_output_MonoAnalyzer/Photon_Strategy/modified_e55/"+year+"/"+process+"/kWeirdkOOT_MonoPhotonAnalysis_"+year+"_"+mass+"_"+sys+"_"+matching+".root" << endl;
-	
  
-        // Private Production - Photon strategy: Birks Law
-        //TFile *oFile = new TFile(("/eos/user/t/tmenezes/Monopole_Ntuples/PrivateProduction_SpinHalf_DrellYan/RECO_BirksOff/BirksOn_OOTe55_MonoPhotonAnalysis_"+year+"_"+mass+"_"+sys+"_"+matching+".root").c_str(),"recreate");
-
-        // Zprime
-        // TFile *oFile = new TFile(("/eos/user/t/tmenezes/Monopole_Ntuples/PrivateProduction_SpinHalf_DrellYan/ZPrime/Zprime_MonoPhotonAnalysis_"+mass+"_"+sys+"_"+matching+".root").c_str(),"recreate");
-       
-        // G4 SimHits + KE
-        //TFile *oFile = new TFile(("/eos/user/t/tmenezes/Monopole_Ntuples/PrivateProduction_SpinHalf_DrellYan/output_MonoAnalyzerPhoton/MonoPhotonAnalysis_"+mass+"_"+sys+"_"+matching+".root").c_str(),"recreate");
-       
-
-	//TFile *oFile = new TFile("/eos/user/t/tmenezes/Monopole_Ntuples/22July_G4SimHits_output.root","recreate");
-
 
 
 	Bool_t passHLT_Photon200;
